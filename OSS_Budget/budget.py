@@ -38,3 +38,19 @@ class Budget:
             print(f"{cat}: {total}원")
         print()
 
+     def search_by_date(self, start_date, end_date):
+        if not self.expenses:
+            print("지출 내역이 없습니다.\n")
+            return
+        print(f"\n[{start_date} ~ {end_date} 지출 내역]")
+
+        found = False
+        for e in self.expenses:
+            if start_date <= e.date <= end_date:
+                print(e)
+                found = True
+        
+        if not found:
+            print("해당되는 기간 내 지출이 없습니다.")
+        
+        print()
