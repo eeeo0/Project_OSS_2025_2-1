@@ -10,7 +10,8 @@ def main():
         print("2. 지출 목록 보기")
         print("3. 총 지출 보기")
         print("4. 카테고리별 지출 보기")
-        print("5. 종료")
+        print("5. 기간 별 지출 검색")
+        print("6. 종료")
         choice = input("선택 > ")
 
         if choice == "1":
@@ -33,6 +34,11 @@ def main():
             budget.summary_by_category()
 
         elif choice == "5":
+            start_date = input("시작 날짜(YYYY-MM-DD): ")
+            end_date = input("마지막 날짜(YYYY-MM-DD): ")
+            budget.search_by_date(start_date, end_date)
+
+        elif choice == "6":
             print("가계부를 종료합니다.")
             break
 
